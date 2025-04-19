@@ -1,0 +1,335 @@
+/* General Styles */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.background-overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header Styles */
+.app-header {
+  padding: 3rem 1rem 2rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* Weather Container */
+.weather-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Search Form */
+.search-form {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.search-input-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.search-input-container input {
+  width: 100%;
+  padding: 12px 40px 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-input-container input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 180, 219, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background: #00B4DB;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+button:hover {
+  background: #0083B0;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Weather Info */
+.weather-info {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.weather-icon {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.temperature-container h3 {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.weather-description {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  text-transform: capitalize;
+}
+
+/* Weather Details Grid */
+.weather-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.weather-detail-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.weather-detail-item:hover {
+  transform: translateY(-5px);
+}
+
+.detail-icon {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-label {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.detail-value {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Error Message */
+.error {
+  background: rgba(255, 59, 48, 0.9);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* Footer Styles */
+.app-footer {
+  padding: 2rem 1.5rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .weather-container {
+    padding: 1.5rem;
+  }
+
+  .weather-main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .temperature-container h3 {
+    font-size: 3rem;
+  }
+
+  .weather-description {
+    font-size: 1.2rem;
+  }
+
+  .weather-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.weather-info {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Weather background classes */
+.weather-default {
+  background: linear-gradient(135deg, #00B4DB, #0083B0);
+}
+
+.weather-clear {
+  background-image: url('./images/sunnyday.jpg');
+}
+
+.weather-rain {
+  background-image: url('./images/rainingday.jpg');
+}
+
+.weather-snow {
+  background-image: url('./images/snowingday.jpg');
+}
+
+.weather-cloudy {
+  background-image: url('./images/cloudyday.jpg');
+}
+
+/* Reuse images for similar weather conditions */
+.weather-thunderstorm {
+  background-image: url('./images/rainingday.jpg');
+}
+
+.weather-drizzle {
+  background-image: url('./images/rainingday.jpg');
+}
+
+.weather-fog {
+  background-image: url('./images/cloudyday.jpg');
+}
+
+/* Responsive adjustments for search form */
+@media (max-width: 480px) {
+  .search-form {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .search-input-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
